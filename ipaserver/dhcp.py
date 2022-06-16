@@ -1037,7 +1037,7 @@ class dhcpserver_del(LDAPDelete):
 
         try:
             dhcpsecondarydns.remove(dn)
-        except AttributeError, ValueError:
+        except (AttributeError, ValueError):
             pass
 
         dhcpservice['dhcpsecondarydn'] = dhcpsecondarydns
